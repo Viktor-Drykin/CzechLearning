@@ -73,12 +73,14 @@ struct HomeView: View {
                     CountColumn(
                         value: viewModel.dueCount,
                         title: String(localized: "к повторению"),
-                        tint: AppColor.accent
+                        tint: AppColor.accent,
+                        identifier: "home.dueCount"
                     )
                     CountColumn(
                         value: viewModel.newCount,
                         title: String(localized: "новых"),
-                        tint: AppColor.success
+                        tint: AppColor.success,
+                        identifier: "home.newCount"
                     )
                     Spacer(minLength: 0)
                 }
@@ -269,6 +271,9 @@ private struct CountColumn: View {
     let value: Int
     let title: String
     let tint: Color
+    /// Стабильный идентификатор для UI-тестов: подпись локализуется,
+    /// а по ней иначе пришлось бы искать элемент.
+    var identifier: String?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
@@ -282,6 +287,7 @@ private struct CountColumn: View {
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Text(verbatim: title))
         .accessibilityValue(Text("\(value)"))
+        .accessibilityIdentifier(identifier ?? "")
     }
 }
 

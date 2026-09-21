@@ -2,8 +2,9 @@
 //  WordImageView.swift
 //  CzechVocab / DesignSystem / Components
 //
-//  Картинка слова с дисковым кэшем и плейсхолдером. Размер не зависит
-//  от того, загрузилась картинка или нет: карточка не должна прыгать.
+//  Картинка слова с дисковым кэшем и плейсхолдером. Пока картинка грузится,
+//  место под неё держит плейсхолдер: карточка не должна прыгать. Если картинки
+//  у слова нет в данных, вью не рисует ничего — ни рамки, ни отступа.
 //
 
 import SwiftUI
@@ -14,11 +15,19 @@ struct WordImageView: View {
     var height: CGFloat = ImagePlaceholder.Metrics.defaultHeight
 
     @State private var image: UIImage?
-    @State private var isLoaded = false
 
     private let cache = ImageCacheService.shared
 
     var body: some View {
+        // Слов без `image_url` в словаре около трети (служебные части речи,
+        // фразы, абстракции). Для них плейсхолдер не информация, а шум,
+        // поэтому ветка пустая: VStack родителя не оставит под неё spacing.
+        if let url = word.imageURL {
+            content(for: url)
+        }
+    }
+
+    private func content(for url: URL) -> some View {
         Group {
             if let image {
                 Image(uiImage: image)
@@ -36,21 +45,18 @@ struct WordImageView: View {
         }
         .frame(maxWidth: .infinity)
         .task(id: word.id) {
-            await load()
+            await load(from: url)
         }
     }
 
-    private func load() async {
+    private func load(from url: URL) async {
         image = nil
-        isLoaded = false
-        guard let url = word.imageURL else { return }
 
         let data = await cache.imageData(for: word.id, url: url)
         guard let data, let decoded = UIImage(data: data) else { return }
 
         withAnimation(.easeOut(duration: 0.2)) {
             image = decoded
-            isLoaded = true
         }
     }
 }
