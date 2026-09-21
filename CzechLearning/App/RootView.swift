@@ -53,7 +53,7 @@ struct MainTabView: View {
                 HomeView()
             }
             Tab(String(localized: "Словарь"), systemImage: "text.book.closed") {
-                PlaceholderTab(title: String(localized: "Словарь"))
+                CatalogView()
             }
             Tab(String(localized: "Прогресс"), systemImage: "chart.bar") {
                 PlaceholderTab(title: String(localized: "Прогресс"))
