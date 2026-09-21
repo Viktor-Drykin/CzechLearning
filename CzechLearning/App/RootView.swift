@@ -56,28 +56,10 @@ struct MainTabView: View {
                 CatalogView()
             }
             Tab(String(localized: "Прогресс"), systemImage: "chart.bar") {
-                PlaceholderTab(title: String(localized: "Прогресс"))
+                StatsView()
             }
         }
         .tint(AppColor.accent)
-    }
-}
-
-/// Временное содержимое вкладки — заменяется на этапах 4 и 7.
-private struct PlaceholderTab: View {
-
-    let title: String
-
-    var body: some View {
-        NavigationStack {
-            ZStack {
-                AppColor.background.ignoresSafeArea()
-                Text(verbatim: title)
-                    .appFont(AppFont.title3)
-                    .foregroundStyle(AppColor.labelTertiary)
-            }
-            .navigationTitle(Text(verbatim: title))
-        }
     }
 }
 

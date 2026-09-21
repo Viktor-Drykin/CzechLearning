@@ -18,6 +18,9 @@ struct FlashcardView: View {
     let intervals: [ReviewGrade: String]
     let onGrade: (ReviewGrade) -> Void
 
+    @Environment(SpeechService.self) private var speech
+    @Environment(SettingsStore.self) private var settings
+
     @State private var isRevealed = false
 
     var body: some View {
@@ -30,6 +33,14 @@ struct FlashcardView: View {
         .onChange(of: word.id) { _, _ in
             isRevealed = false
         }
+        .task(id: word.id) { autoSpeak() }
+    }
+
+    /// Автоозвучка при показе карточки (ТЗ 8.4). В обратном направлении
+    /// на лице стоит перевод — озвучивать нечего.
+    private func autoSpeak() {
+        guard settings.autoSpeak, !isReverse else { return }
+        speech.speak(word.czech, rateMultiplier: settings.speechRateMultiplier)
     }
 
     // MARK: - Карточка
