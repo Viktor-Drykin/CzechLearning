@@ -39,6 +39,10 @@ final class StudySessionViewModel {
     private(set) var summary = Summary()
     private(set) var isFinished = false
 
+    /// Снимок словаря для генерации вариантов ответа. Заполняется только
+    /// в режимах, где варианты нужны.
+    private(set) var dictionary: [DistractorCandidate] = []
+
     /// Разбивка исходной очереди для шапки.
     private(set) var initialReviewCount = 0
     private(set) var initialNewCount = 0
@@ -101,6 +105,11 @@ final class StudySessionViewModel {
         let items = mode == .typing ? built.items.filter { !$0.isPhrase } : built.items
 
         queue = try repository.words(ids: items.map(\.id))
+        // Словарь для дистракторов — один снимок на сессию: пересобирать его
+        // на каждую карточку значило бы читать 1744 записи по пятьдесят раз.
+        if mode == .multipleChoice || mode == .listening {
+            dictionary = try repository.allWords().map(DistractorCandidate.init(word:))
+        }
         plannedCount = queue.count
         currentIndex = 0
         initialReviewCount = built.reviewCount
@@ -195,6 +204,70 @@ final class StudySessionViewModel {
         }
 
         advance(after: word, now: now)
+    }
+
+    /// Ответ автоматического режима: оценка считается по времени (ТЗ 6.3).
+    func submitAutomatic(correct: Bool, now: Date = .now) {
+        let grade = SRSConstants.grade(
+            correct: correct,
+            responseTime: now.timeIntervalSince(cardShownAt)
+        )
+        submit(grade: grade, now: now)
+    }
+
+    /// Ответ письменного режима: потолок оценки задаёт исход проверки.
+    func submitTyped(outcome: AnswerValidator.Outcome, now: Date = .now) {
+        let grade = AnswerValidator.grade(
+            for: outcome,
+            responseTime: now.timeIntervalSince(cardShownAt)
+        )
+        submit(grade: grade, now: now)
+    }
+
+    // MARK: - Режим «Пары»
+
+    /// Пять слов из головы очереди для очередного раунда.
+    func matchingRound() -> [MatchingWord] {
+        queue[currentIndex...]
+            .prefix(MatchingRoundBuilder.pairCount)
+            .map(MatchingWord.init(word:))
+    }
+
+    /// Результат по одной паре. Верная — `good`, промах — `hard`.
+    /// Оценка идёт в SRS, но карточка при этом не покидает очередь:
+    /// её двигает завершение раунда.
+    func recordPair(wordID: Int, grade: ReviewGrade, now: Date = .now) {
+        guard let word = queue.first(where: { $0.id == wordID }) else { return }
+        let wasNew = wasNewAtStart.contains(wordID)
+
+        do {
+            try repository.recordAnswer(
+                word: word,
+                grade: grade,
+                mode: .matching,
+                responseTime: now.timeIntervalSince(cardShownAt),
+                now: now
+            )
+            try statsRepository.recordAnswer(wasNew: wasNew, correct: grade != .again, date: now)
+            try repository.save()
+        } catch {
+            assertionFailure("Не удалось записать пару: \(error)")
+        }
+
+        summary.answered += 1
+        if grade != .again {
+            summary.correct += 1
+        }
+        if wasNew, word.progress?.state == .review {
+            summary.newLearned += 1
+        }
+    }
+
+    /// Раунд собран — сдвигаем очередь на его длину.
+    func finishMatchingRound() {
+        currentIndex += min(MatchingRoundBuilder.pairCount, remainingCount)
+        finishIfNeeded()
+        resetCardTimer()
     }
 
     /// Пропуск карточки без записи ответа — например, фраза в письменном вводе.

@@ -12,6 +12,7 @@ struct HomeView: View {
 
     @Environment(\.modelContext) private var modelContext
     @Environment(SettingsStore.self) private var settings
+    @Environment(SpeechService.self) private var speech
 
     @State private var viewModel: HomeViewModel?
     @State private var session: SessionRequest?
@@ -33,6 +34,7 @@ struct HomeView: View {
                 VStack(spacing: AppSpacing.section) {
                     if let viewModel {
                         todayCard(viewModel)
+                        modeSection
                         deckSection(viewModel)
                         difficultButton(viewModel)
                     } else {
@@ -137,6 +139,43 @@ struct HomeView: View {
         }
     }
 
+    // MARK: - Режимы
+
+    /// Аудирование скрывается, когда чешского голоса в системе нет (ТЗ 7.4).
+    private var availableModes: [StudyMode] {
+        StudyMode.allCases.filter { $0 != .listening || speech.isCzechVoiceAvailable }
+    }
+
+    @ViewBuilder
+    private var modeSection: some View {
+        VStack(alignment: .leading, spacing: AppSpacing.stack) {
+            Text("Режимы")
+                .appFont(AppFont.sectionHeader)
+                .textCase(.uppercase)
+                .foregroundStyle(AppColor.labelTertiary)
+
+            // Режимы переносятся по строкам, а не прокручиваются вбок:
+            // их пять, и все должны быть видны сразу.
+            LazyVGrid(
+                columns: [
+                    GridItem(.adaptive(minimum: Metrics.modeChipMinWidth), spacing: AppSpacing.tight)
+                ],
+                spacing: AppSpacing.tight
+            ) {
+                ForEach(availableModes, id: \.rawValue) { mode in
+                    ModeChip(mode: mode, isDefault: mode == settings.defaultMode) {
+                        session = SessionRequest(mode: mode, deck: .all, aheadOfSchedule: false)
+                    }
+                }
+            }
+        }
+    }
+
+    private enum Metrics {
+        /// Минимальная ширина чипа режима: «Письменный ввод» — самая длинная подпись.
+        static let modeChipMinWidth: CGFloat = 150
+    }
+
     // MARK: - Колоды
 
     @ViewBuilder
@@ -238,6 +277,32 @@ private struct CountColumn: View {
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Text(verbatim: title))
         .accessibilityValue(Text("\(value)"))
+    }
+}
+
+private struct ModeChip: View {
+
+    let mode: StudyMode
+    let isDefault: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: AppSpacing.tight) {
+                Image(systemName: mode.symbolName)
+                Text(verbatim: mode.displayName)
+            }
+            .appFont(AppFont.footnote)
+            .foregroundStyle(isDefault ? AppColor.onAccent : AppColor.label)
+            .padding(.horizontal, AppSpacing.cardPaddingCompact)
+            .frame(height: AppSize.minTouchTarget)
+            .background(
+                isDefault ? AppColor.accent : AppColor.surface,
+                in: RoundedRectangle(cornerRadius: AppRadius.button, style: .continuous)
+            )
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(Text("Режим «\(mode.displayName)»"))
     }
 }
 

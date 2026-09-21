@@ -72,7 +72,14 @@ struct StudySessionView: View {
                 onClose: { close(viewModel) }
             )
 
-            if let word = viewModel.currentWord {
+            if mode == .matching {
+                MatchingView(
+                    words: viewModel.matchingRound(),
+                    language: settings.translationLanguage,
+                    onPair: { viewModel.recordPair(wordID: $0, grade: $1) },
+                    onFinished: { viewModel.finishMatchingRound() }
+                )
+            } else if let word = viewModel.currentWord {
                 modeContent(for: word, viewModel: viewModel)
                     .id(word.id)
                     .transition(.asymmetric(
@@ -104,17 +111,38 @@ struct StudySessionView: View {
                 intervals: viewModel.intervalLabels(),
                 onGrade: { viewModel.submit(grade: $0) }
             )
-        case .multipleChoice, .typing, .listening, .matching:
-            // Реализуются на этапе 6; до тех пор режим недоступен в выборе.
-            FlashcardView(
+
+        case .multipleChoice:
+            MultipleChoiceView(
                 word: word,
+                dictionary: viewModel.dictionary,
                 direction: viewModel.currentDirection,
                 language: settings.translationLanguage,
-                showImages: settings.showImages,
-                clozeEnabled: settings.clozeEnabled,
-                intervals: viewModel.intervalLabels(),
-                onGrade: { viewModel.submit(grade: $0) }
+                onAnswer: { viewModel.submitAutomatic(correct: $0) }
             )
+
+        case .typing:
+            TypingView(
+                word: word,
+                language: settings.translationLanguage,
+                showImages: settings.showImages,
+                onAnswer: { viewModel.submitTyped(outcome: $0) }
+            )
+
+        case .listening:
+            ListeningView(
+                word: word,
+                dictionary: viewModel.dictionary,
+                language: settings.translationLanguage,
+                usesTyping: settings.listeningUsesTyping,
+                onChoice: { viewModel.submitAutomatic(correct: $0) },
+                onTyped: { viewModel.submitTyped(outcome: $0) }
+            )
+
+        case .matching:
+            // Режим «Пары» рисуется выше — он работает не с одной карточкой,
+            // а с раундом из пяти.
+            EmptyView()
         }
     }
 

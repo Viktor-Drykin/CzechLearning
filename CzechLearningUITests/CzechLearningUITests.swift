@@ -68,6 +68,39 @@ final class CzechLearningUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Готово"].firstMatch.exists)
     }
 
+    /// Каждый режим должен открываться и показывать свой интерфейс —
+    /// критерий приёмки «можно пройти сессию в каждом из пяти режимов».
+    @MainActor
+    func testEveryModeOpens() throws {
+        let app = launchApp()
+        XCTAssertTrue(app.buttons["Начать"].firstMatch.waitForExistence(timeout: 30))
+
+        // Ожидаемый элемент, по которому видно, что режим действительно открылся.
+        let modes: [(name: String, marker: String)] = [
+            ("Карточки", "Показать ответ"),
+            ("Выбор варианта", "mode.multipleChoice"),
+            ("Письменный ввод", "Не знаю"),
+            ("Пары", "Соберите пары"),
+        ]
+
+        for mode in modes {
+            let chip = app.buttons["Режим «\(mode.name)»"].firstMatch
+            XCTAssertTrue(chip.waitForExistence(timeout: 10), "Кнопка режима «\(mode.name)»")
+            chip.tap()
+
+            let marker = app.descendants(matching: .any)[mode.marker].firstMatch
+            XCTAssertTrue(marker.waitForExistence(timeout: 10), "Режим «\(mode.name)» не открылся")
+
+            app.buttons["Закрыть сессию"].firstMatch.tap()
+            // Если пройдено меньше половины, спрашивается подтверждение.
+            let confirm = app.buttons["Закончить"].firstMatch
+            if confirm.waitForExistence(timeout: 2) {
+                confirm.tap()
+            }
+            XCTAssertTrue(app.buttons["Начать"].firstMatch.waitForExistence(timeout: 10))
+        }
+    }
+
     @MainActor
     func testTabsAreReachable() throws {
         let app = launchApp()
