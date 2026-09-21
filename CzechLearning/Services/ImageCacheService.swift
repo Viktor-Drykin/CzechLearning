@@ -36,7 +36,9 @@ actor ImageCacheService {
         static let prefetchConcurrency = 4
     }
 
-    init(directory: URL? = nil) {
+    /// - Parameter protocolClasses: подмена сетевого слоя в тестах;
+    ///   в приложении всегда `nil` — ходим обычным `URLSession`.
+    init(directory: URL? = nil, protocolClasses: [AnyClass]? = nil) {
         let configuration = URLSessionConfiguration.default
         configuration.urlCache = URLCache(
             memoryCapacity: Limits.memoryCapacity,
@@ -47,6 +49,9 @@ actor ImageCacheService {
         // Low Data Mode: картинки не грузим (ТЗ 10).
         configuration.allowsConstrainedNetworkAccess = false
         configuration.waitsForConnectivity = false
+        if let protocolClasses {
+            configuration.protocolClasses = protocolClasses
+        }
         session = URLSession(configuration: configuration)
 
         if let directory {
