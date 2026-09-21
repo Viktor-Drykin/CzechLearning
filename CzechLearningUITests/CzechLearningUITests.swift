@@ -153,3 +153,52 @@ final class LocalizationUITests: XCTestCase {
         XCTAssertTrue(app.tabBars.buttons["Словарь"].exists)
     }
 }
+
+// MARK: - Сохранение между запусками
+
+final class PersistenceUITests: XCTestCase {
+
+    override func setUpWithError() throws {
+        continueAfterFailure = false
+    }
+
+    /// Прогресс должен переживать настоящий перезапуск приложения,
+    /// а не только пересоздание контекста (критерий приёмки раздела 15).
+    @MainActor
+    func testProgressSurvivesRelaunch() throws {
+        let app = XCUIApplication()
+        app.launch()
+
+        let start = app.buttons["Начать"].firstMatch
+        XCTAssertTrue(start.waitForExistence(timeout: 30))
+        start.tap()
+
+        // Три карточки с оценкой «Легко» уходят в повторение надолго,
+        // поэтому после перезапуска новых останется меньше.
+        for _ in 0..<3 {
+            let reveal = app.buttons["Показать ответ"].firstMatch
+            XCTAssertTrue(reveal.waitForExistence(timeout: 10))
+            reveal.tap()
+            app.buttons["Легко"].firstMatch.tap()
+        }
+
+        app.buttons["Закрыть сессию"].firstMatch.tap()
+        let confirm = app.buttons["Закончить"].firstMatch
+        if confirm.waitForExistence(timeout: 2) {
+            confirm.tap()
+        }
+
+        // Счётчик новых на сегодня уменьшился на пройденные карточки.
+        XCTAssertTrue(app.staticTexts["7"].waitForExistence(timeout: 10), "Осталось 7 новых из 10")
+
+        app.terminate()
+        app.launch()
+
+        XCTAssertTrue(app.buttons["Начать"].firstMatch.waitForExistence(timeout: 30))
+        XCTAssertTrue(
+            app.staticTexts["7"].waitForExistence(timeout: 10),
+            "После перезапуска прогресс должен сохраниться"
+        )
+        XCTAssertFalse(app.staticTexts["10"].exists, "Счётчик не должен вернуться к 10")
+    }
+}

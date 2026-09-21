@@ -136,6 +136,38 @@ struct ImageCacheTests {
         #expect(await cache.hasCachedImage(for: 3) == false)
     }
 
+    // MARK: - Префетч
+
+    @Test("Префетч складывает картинки начала очереди на диск")
+    func prefetchFillsCache() async throws {
+        let (cache, directory) = makeCache()
+        defer { try? FileManager.default.removeItem(at: directory) }
+
+        await StubURLProtocol.setResponse(.success(Self.makeJPEG(color: .cyan)))
+        let url = try #require(URL(string: "https://loremflickr.com/640/480/prefetch"))
+        let items = (1...8).map { (id: $0, url: url) }
+
+        await cache.prefetch(items)
+
+        for item in items {
+            #expect(await cache.hasCachedImage(for: item.id), "Слово \(item.id)")
+        }
+    }
+
+    @Test("Префетч берёт не больше двадцати карточек")
+    func prefetchIsCapped() async throws {
+        let (cache, directory) = makeCache()
+        defer { try? FileManager.default.removeItem(at: directory) }
+
+        await StubURLProtocol.setResponse(.success(Self.makeJPEG(color: .magenta)))
+        let url = try #require(URL(string: "https://loremflickr.com/640/480/cap"))
+
+        await cache.prefetch((1...40).map { (id: $0, url: url) })
+
+        #expect(await cache.hasCachedImage(for: 20))
+        #expect(await cache.hasCachedImage(for: 21) == false, "За пределами лимита не качаем")
+    }
+
     // MARK: - Источник картинок
 
     @Test("Словарь не ссылается ни на какой хост, кроме loremflickr.com")
