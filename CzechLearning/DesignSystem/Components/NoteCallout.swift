@@ -15,7 +15,7 @@ struct NoteCallout: View {
     var body: some View {
         HStack(alignment: .top, spacing: AppSpacing.tight) {
             Image(systemName: "exclamationmark.circle.fill")
-                .font(.system(size: Metrics.iconSize))
+                .appSymbol(AppSymbol.note)
                 .foregroundStyle(AppColor.noteLabel)
 
             Text(verbatim: text)
@@ -35,10 +35,6 @@ struct NoteCallout: View {
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Text("Примечание"))
         .accessibilityValue(Text(verbatim: text))
-    }
-
-    private enum Metrics {
-        static let iconSize: CGFloat = 18
     }
 }
 

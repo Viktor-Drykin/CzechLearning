@@ -318,7 +318,7 @@ private struct DeckCard: View {
                     .appFont(AppFont.title3)
                     .foregroundStyle(AppColor.label)
 
-                Text("\(deck.learned) из \(deck.total)")
+                Text(verbatim: LocalizedFormat.learnedOfTotal(deck.learned, of: deck.total))
                     .appFont(AppFont.footnote)
                     .foregroundStyle(AppColor.labelSecondary)
 
@@ -331,7 +331,7 @@ private struct DeckCard: View {
         .buttonStyle(.plain)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Text("Колода \(deck.level.rawValue)"))
-        .accessibilityValue(Text("Выучено \(deck.learned) из \(deck.total)"))
+        .accessibilityValue(Text(verbatim: LocalizedFormat.learnedAccessibilityValue(deck.learned, of: deck.total)))
     }
 
     private enum Metrics {

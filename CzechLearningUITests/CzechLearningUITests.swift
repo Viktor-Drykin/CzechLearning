@@ -114,3 +114,42 @@ final class CzechLearningUITests: XCTestCase {
         }
     }
 }
+
+// MARK: - Локализация
+
+final class LocalizationUITests: XCTestCase {
+
+    override func setUpWithError() throws {
+        continueAfterFailure = false
+    }
+
+    /// Интерфейс на украинском. Заодно ловит расхождение ключей у строк
+    /// с двумя подстановками: «0 з 694» собирается по позиционному ключу.
+    @MainActor
+    func testUkrainianInterface() throws {
+        let app = XCUIApplication()
+        app.launchArguments += ["-AppleLanguages", "(uk)", "-AppleLocale", "uk_UA"]
+        app.launch()
+
+        XCTAssertTrue(app.staticTexts["Вчити"].firstMatch.waitForExistence(timeout: 30))
+        XCTAssertTrue(app.buttons["Почати"].firstMatch.exists, "Кнопка «Начать» по-украински")
+        XCTAssertTrue(app.staticTexts["0 з 694"].waitForExistence(timeout: 5), "Счётчик колоды")
+        XCTAssertFalse(app.staticTexts["0 из 694"].exists, "Русская строка не должна остаться")
+
+        for tab in ["Словник", "Прогрес", "Вчити"] {
+            XCTAssertTrue(app.tabBars.buttons[tab].exists, "Вкладка «\(tab)»")
+        }
+    }
+
+    /// Dynamic Type до XXL не должен ломать вёрстку главного экрана.
+    @MainActor
+    func testLargestSupportedDynamicType() throws {
+        let app = XCUIApplication()
+        app.launchArguments += ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryXXL"]
+        app.launch()
+
+        XCTAssertTrue(app.buttons["Начать"].firstMatch.waitForExistence(timeout: 30))
+        XCTAssertTrue(app.buttons["Начать"].firstMatch.isHittable)
+        XCTAssertTrue(app.tabBars.buttons["Словарь"].exists)
+    }
+}

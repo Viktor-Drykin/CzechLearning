@@ -1,2 +1,60 @@
-# CzechLearning
-This is a project which helps Russian and Ukrainian speaking people to learn the Czech language
+# CzechVocab
+
+iOS-приложение для заучивания чешской лексики уровней A1–B1 методом карточек
+с интервальным повторением. Для русско- и украиноязычных пользователей.
+
+Работает офлайн: сеть нужна только для загрузки картинок к словам.
+Ни аналитики, ни трекинга, ни передачи данных наружу.
+
+## Что внутри
+
+- **1744 слова и фразы** уровней A1 / A2 / B1 в 57 темах, импортируются из CSV
+  при первом запуске;
+- **пять режимов**: карточки, выбор варианта, письменный ввод, аудирование, пары;
+- **SM-2** с шагами обучения, переучиванием и разбросом интервалов;
+- **озвучка** чешского через системный TTS, включая замедленный темп;
+- **картинки** с дисковым кэшем: одно слово — одна картинка, доступна офлайн;
+- **каталог** с поиском по чешскому (с диакритикой и без), русскому и украинскому;
+- **прогресс**: график активности за 30 дней, разбивка по уровням и темам;
+- интерфейс на русском и украинском, тёмная тема, Dynamic Type до XXL, VoiceOver.
+
+## Требования
+
+- Xcode 26 и SDK iOS 26;
+- Swift 6, SwiftUI, SwiftData, Swift Charts — только системные фреймворки,
+  сторонних зависимостей нет.
+
+## Сборка и тесты
+
+```sh
+xcodebuild -project CzechLearning.xcodeproj -scheme CzechLearning \
+  -destination 'platform=iOS Simulator,name=iPhone 17' build
+
+xcodebuild -project CzechLearning.xcodeproj -scheme CzechLearning \
+  -destination 'platform=iOS Simulator,name=iPhone 17' test
+```
+
+Если `xcode-select` указывает на Command Line Tools, перед командами нужен
+`export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer`.
+
+## Структура
+
+```
+CzechLearning/
+├── App/            точка входа, корневая навигация, импорт при старте
+├── Data/           модели SwiftData, парсер CSV, импортёр, репозитории
+├── Domain/         SRS, очередь, генерация заданий — чистые типы без SwiftData
+├── Services/       озвучка, кэш картинок, настройки
+├── Features/       экраны: Home, Study, Catalog, Stats, Settings
+├── DesignSystem/   цвета, типографика, метрики, компоненты
+└── Resources/      словарь, каталог строк, манифест приватности
+```
+
+Доменный слой намеренно не знает про SwiftData: планировщик, построитель
+очереди, генератор дистракторов и валидатор ответов работают со снимками-value
+и покрыты юнит-тестами (98,9 % строк).
+
+## Документы
+
+- [`TZ_czech_vocab_ios_mvp.md`](TZ_czech_vocab_ios_mvp.md) — техническое задание;
+- [`DesignSystem.md`](DesignSystem.md) — источник правды по цветам, шрифтам и метрикам.

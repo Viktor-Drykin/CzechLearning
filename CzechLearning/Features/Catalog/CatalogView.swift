@@ -153,7 +153,7 @@ struct CatalogSectionRow: View {
 
             Spacer(minLength: 0)
 
-            Text("\(section.learned) / \(section.total)")
+            Text(verbatim: LocalizedFormat.counter(section.learned, of: section.total))
                 .appFont(AppFont.callout)
                 .foregroundStyle(AppColor.labelSecondary)
                 .monospacedDigit()
@@ -168,7 +168,7 @@ struct CatalogSectionRow: View {
         .cardSurface()
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Text(verbatim: section.title))
-        .accessibilityValue(Text("Выучено \(section.learned) из \(section.total)"))
+        .accessibilityValue(Text(verbatim: LocalizedFormat.learnedAccessibilityValue(section.learned, of: section.total)))
     }
 
     private var iconTint: Color {
@@ -306,7 +306,7 @@ struct EmptyStateView: View {
     var body: some View {
         VStack(spacing: AppSpacing.stack) {
             Image(systemName: symbolName)
-                .font(.system(size: Metrics.glyphSize))
+                .appSymbol(AppSymbol.emptyState)
                 .foregroundStyle(AppColor.success)
                 .frame(width: Metrics.circle, height: Metrics.circle)
                 .background(AppColor.successTint, in: Circle())
@@ -325,7 +325,6 @@ struct EmptyStateView: View {
     }
 
     private enum Metrics {
-        static let glyphSize: CGFloat = 28
         static let circle: CGFloat = 64
     }
 }

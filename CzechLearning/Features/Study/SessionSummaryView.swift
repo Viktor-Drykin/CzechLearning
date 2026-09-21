@@ -19,7 +19,7 @@ struct SessionSummaryView: View {
 
             VStack(spacing: AppSpacing.tight) {
                 Image(systemName: "checkmark.seal.fill")
-                    .font(.system(size: Metrics.glyphSize))
+                    .appSymbol(AppSymbol.hero)
                     .foregroundStyle(AppColor.success)
 
                 Text("Сессия завершена")
@@ -72,13 +72,7 @@ struct SessionSummaryView: View {
         guard totalMinutes >= 60 else {
             return String(localized: "\(max(1, totalMinutes)) мин", comment: "Длительность сессии")
         }
-        let hours = totalMinutes / 60
-        let minutes = totalMinutes % 60
-        return String(localized: "\(hours) ч \(minutes) мин", comment: "Длительность сессии с часами")
-    }
-
-    private enum Metrics {
-        static let glyphSize: CGFloat = 48
+        return LocalizedFormat.duration(hours: totalMinutes / 60, minutes: totalMinutes % 60)
     }
 }
 

@@ -244,7 +244,7 @@ private struct QueueBreakdownLabel: View {
             Circle()
                 .fill(color)
                 .frame(width: Metrics.dotSize, height: Metrics.dotSize)
-            Text("\(count) \(title)")
+            Text(verbatim: LocalizedFormat.countedLabel(count, title))
                 .appFont(AppFont.caption)
                 .foregroundStyle(AppColor.labelTertiary)
         }
@@ -268,7 +268,7 @@ struct EmptyQueueView: View {
             Spacer()
 
             Image(systemName: "checkmark.circle.fill")
-                .font(.system(size: Metrics.glyphSize))
+                .appSymbol(AppSymbol.hero)
                 .foregroundStyle(AppColor.success)
 
             Text("На сегодня всё")
@@ -284,9 +284,5 @@ struct EmptyQueueView: View {
 
             PrimaryButton(title: String(localized: "Готово"), action: onDone)
         }
-    }
-
-    private enum Metrics {
-        static let glyphSize: CGFloat = 48
     }
 }

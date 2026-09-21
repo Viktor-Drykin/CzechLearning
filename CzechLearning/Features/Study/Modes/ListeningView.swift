@@ -50,7 +50,7 @@ struct ListeningView: View {
                 speech.speak(word.czech, rateMultiplier: settings.speechRateMultiplier)
             } label: {
                 Image(systemName: speech.isSpeaking ? "speaker.wave.3.fill" : "speaker.wave.2.fill")
-                    .font(.system(size: Metrics.glyphSize))
+                    .appSymbol(AppSymbol.listen)
                     .foregroundStyle(AppColor.accent)
                     .frame(width: AppSize.listenButton, height: AppSize.listenButton)
                     .background(AppColor.accentTint, in: Circle())
@@ -168,9 +168,5 @@ struct ListeningView: View {
 
         // Слово проигрывается само — это суть режима.
         speech.speak(word.czech, rateMultiplier: settings.speechRateMultiplier)
-    }
-
-    private enum Metrics {
-        static let glyphSize: CGFloat = 44
     }
 }

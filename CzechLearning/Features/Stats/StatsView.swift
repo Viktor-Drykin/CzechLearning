@@ -192,7 +192,7 @@ private struct BreakdownRow: View {
                 DeckProgressBar(share: row.share)
             }
 
-            Text("\(row.learned) / \(row.total)")
+            Text(verbatim: LocalizedFormat.counter(row.learned, of: row.total))
                 .appFont(AppFont.footnote)
                 .foregroundStyle(AppColor.labelSecondary)
                 .monospacedDigit()
@@ -204,7 +204,7 @@ private struct BreakdownRow: View {
         .cardSurface()
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Text(verbatim: row.title))
-        .accessibilityValue(Text("Выучено \(row.learned) из \(row.total)"))
+        .accessibilityValue(Text(verbatim: LocalizedFormat.learnedAccessibilityValue(row.learned, of: row.total)))
     }
 
     private enum Metrics {

@@ -75,7 +75,9 @@ struct WordChipRow: View {
                 Chip(tag.displayName)
             }
             if let genitive = word.genitiveForm {
-                Chip(text: Text("р. п. ") + Text.czech(genitive))
+                // Подпись — язык интерфейса, сама форма — чешская:
+                // VoiceOver должен прочитать её чешским голосом.
+                Chip(text: Text("\(Text("р. п. "))\(Text.czech(genitive))"))
             }
             if showLevel {
                 Chip(word.level.rawValue)

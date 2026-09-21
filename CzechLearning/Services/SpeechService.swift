@@ -104,7 +104,15 @@ final class SpeechService {
 /// чтобы сервис оставался `@Observable` без наследования.
 private final class SpeechDelegate: NSObject, AVSpeechSynthesizerDelegate {
 
-    var onChange: (@MainActor (Bool) -> Void)?
+    /// Колбэк ставится один раз при инициализации сервиса и дальше не меняется;
+    /// синтезатор зовёт делегат с главной очереди.
+    @MainActor private var _onChange: (@MainActor (Bool) -> Void)?
+
+    @MainActor
+    var onChange: (@MainActor (Bool) -> Void)? {
+        get { _onChange }
+        set { _onChange = newValue }
+    }
 
     nonisolated func speechSynthesizer(
         _ synthesizer: AVSpeechSynthesizer,
@@ -128,7 +136,7 @@ private final class SpeechDelegate: NSObject, AVSpeechSynthesizerDelegate {
     }
 
     private nonisolated func notify(_ speaking: Bool) {
-        Task { @MainActor [onChange] in
+        Task { @MainActor in
             onChange?(speaking)
         }
     }

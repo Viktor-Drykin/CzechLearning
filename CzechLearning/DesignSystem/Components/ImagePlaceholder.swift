@@ -21,7 +21,7 @@ struct ImagePlaceholder: View {
             .overlay {
                 VStack(spacing: AppSpacing.tight) {
                     Image(systemName: symbolName)
-                        .font(.system(size: Metrics.glyphSize))
+                        .appSymbol(AppSymbol.placeholder)
                     Text("картинка слова")
                         .appFont(AppFont.caption)
                 }
@@ -33,7 +33,6 @@ struct ImagePlaceholder: View {
     enum Metrics {
         static let defaultHeight: CGFloat = 160
         static let compactHeight: CGFloat = 120
-        static let glyphSize: CGFloat = 36
     }
 }
 

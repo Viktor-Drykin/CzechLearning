@@ -87,9 +87,31 @@ enum AppSize {
     static let minTouchTarget: CGFloat = 44
 }
 
+// MARK: - Размеры глифов
+
+/// Размеры SF Symbols. Шкала `AppFont` задаёт текст, а глиф без подписи
+/// ею не описывается — но и числовым литералом во вьюхе быть не должен.
+enum AppSymbol {
+    /// Иконка в callout примечания.
+    static let note: CGFloat = 18
+    /// Глиф пустого состояния в круге 64 pt.
+    static let emptyState: CGFloat = 28
+    /// Глиф плейсхолдера картинки.
+    static let placeholder: CGFloat = 36
+    /// Глиф в крупной кнопке прослушивания.
+    static let listen: CGFloat = 44
+    /// Крупный итоговый глиф: «Сессия завершена», «На сегодня всё».
+    static let hero: CGFloat = 48
+}
+
 // MARK: - Хелперы
 
 extension View {
+
+    /// Размер SF Symbol без подписи. Масштабируется вместе с Dynamic Type.
+    func appSymbol(_ size: CGFloat, relativeTo textStyle: Font.TextStyle = .body) -> some View {
+        modifier(AppSymbolModifier(size: size, textStyle: textStyle))
+    }
     /// Гарантирует минимальную область касания 44 × 44 pt,
     /// не меняя видимый размер элемента.
     func minimumTouchTarget() -> some View {
@@ -100,5 +122,18 @@ extension View {
     /// Стандартная карточка: заливка `surface` и скруглённые углы.
     func cardSurface(radius: CGFloat = AppRadius.card) -> some View {
         background(AppColor.surface, in: RoundedRectangle(cornerRadius: radius, style: .continuous))
+    }
+}
+
+private struct AppSymbolModifier: ViewModifier {
+
+    @ScaledMetric private var scaledSize: CGFloat
+
+    init(size: CGFloat, textStyle: Font.TextStyle) {
+        _scaledSize = ScaledMetric(wrappedValue: size, relativeTo: textStyle)
+    }
+
+    func body(content: Content) -> some View {
+        content.font(.system(size: scaledSize))
     }
 }

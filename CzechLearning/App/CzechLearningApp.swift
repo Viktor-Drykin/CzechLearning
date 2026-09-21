@@ -12,20 +12,15 @@ struct CzechLearningApp: App {
     /// Контейнер создаётся один раз на запуск: его пересоздание обнулило бы
     /// открытые контексты и наблюдение во вьюхах.
     private let container: ModelContainer
+    private let storage: AppSchema.Storage
 
     init() {
-        do {
-            container = try AppSchema.makeContainer()
-        } catch {
-            // Хранилище не открылось — работать не с чем; падение здесь честнее,
-            // чем тихая работа с пустой базой в памяти.
-            fatalError("Не удалось открыть хранилище SwiftData: \(error)")
-        }
+        (container, storage) = AppSchema.openContainer()
     }
 
     var body: some Scene {
         WindowGroup {
-            RootView()
+            RootView(storage: storage)
                 .dynamicTypeSize(...AppTypography.maximumSize)
         }
         .modelContainer(container)

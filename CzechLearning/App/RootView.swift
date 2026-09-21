@@ -10,17 +10,29 @@ import SwiftUI
 
 struct RootView: View {
 
+    /// Чем открылось хранилище: при откате показываем предупреждение.
+    var storage: AppSchema.Storage = .onDisk
+
     @Environment(\.modelContext) private var modelContext
 
     @State private var bootstrap: VocabularyBootstrap?
     @State private var settings = SettingsStore()
     @State private var speech = SpeechService()
+    @State private var showsStorageWarning = false
 
     var body: some View {
         Group {
             switch bootstrap?.phase {
             case .ready:
                 MainTabView()
+                    .alert(
+                        Text("Прогресс не удалось восстановить"),
+                        isPresented: $showsStorageWarning
+                    ) {
+                        Button(String(localized: "Понятно"), role: .cancel) {}
+                    } message: {
+                        Text(verbatim: storageWarning)
+                    }
             case .failed(let message):
                 ImportFailureView(message: message) {
                     Task { await bootstrap?.retry() }
@@ -39,6 +51,18 @@ struct RootView: View {
                 bootstrap = VocabularyBootstrap(container: modelContext.container)
             }
             await bootstrap?.start()
+            showsStorageWarning = storage != .onDisk
+        }
+    }
+
+    private var storageWarning: String {
+        switch storage {
+        case .onDisk:
+            ""
+        case .recreated:
+            String(localized: "Хранилище не открылось и было создано заново. Словарь на месте, но изученное придётся пройти снова.")
+        case .inMemory:
+            String(localized: "Хранилище недоступно. Приложение работает, но прогресс не сохранится до перезапуска.")
         }
     }
 }
