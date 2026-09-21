@@ -11,7 +11,10 @@ import SwiftUI
 struct RootView: View {
 
     @Environment(\.modelContext) private var modelContext
+
     @State private var bootstrap: VocabularyBootstrap?
+    @State private var settings = SettingsStore()
+    @State private var speech = SpeechService()
 
     var body: some View {
         Group {
@@ -29,6 +32,8 @@ struct RootView: View {
             }
         }
         .background(AppColor.background)
+        .environment(settings)
+        .environment(speech)
         .task {
             if bootstrap == nil {
                 bootstrap = VocabularyBootstrap(container: modelContext.container)
@@ -45,7 +50,7 @@ struct MainTabView: View {
     var body: some View {
         TabView {
             Tab(String(localized: "Учить"), systemImage: "rectangle.on.rectangle.angled") {
-                PlaceholderTab(title: String(localized: "Учить"))
+                HomeView()
             }
             Tab(String(localized: "Словарь"), systemImage: "text.book.closed") {
                 PlaceholderTab(title: String(localized: "Словарь"))
@@ -58,7 +63,7 @@ struct MainTabView: View {
     }
 }
 
-/// Временное содержимое вкладки — заменяется на этапах 3, 4 и 7.
+/// Временное содержимое вкладки — заменяется на этапах 4 и 7.
 private struct PlaceholderTab: View {
 
     let title: String
@@ -67,11 +72,11 @@ private struct PlaceholderTab: View {
         NavigationStack {
             ZStack {
                 AppColor.background.ignoresSafeArea()
-                Text(title)
+                Text(verbatim: title)
                     .appFont(AppFont.title3)
                     .foregroundStyle(AppColor.labelTertiary)
             }
-            .navigationTitle(title)
+            .navigationTitle(Text(verbatim: title))
         }
     }
 }
