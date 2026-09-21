@@ -72,7 +72,11 @@ struct WordChipRow: View {
             Chip(word.partOfSpeech.shortName)
 
             if let tag = word.grammarTag {
-                Chip(tag.displayName)
+                if let tint = tag.chipTint {
+                    Chip(tag.displayName).tinted(tint)
+                } else {
+                    Chip(tag.displayName)
+                }
             }
             if let genitive = word.genitiveForm {
                 // Подпись — язык интерфейса, сама форма — чешская:
@@ -143,15 +147,30 @@ extension PartOfSpeech {
 
 extension GrammarTag {
 
+    /// Подпись чипа. Мужской род всегда с пометкой одушевлённости: она задаёт
+    /// склонение, и без неё пометка бесполезна (ТЗ 7.1).
     var displayName: String {
         switch self {
-        case .masculine: String(localized: "м. р.")
+        case .masculineAnimate: String(localized: "м. р. одуш.")
+        case .masculineInanimate: String(localized: "м. р. неодуш.")
         case .feminine: String(localized: "ж. р.")
         case .neuter: String(localized: "ср. р.")
         case .plural: String(localized: "мн. ч.")
         case .imperfective: String(localized: "несов. вид")
         case .perfective: String(localized: "сов. вид")
         }
+    }
+
+    /// Цвет подписи чипа: у рода — тот же, что и у самого слова,
+    /// чтобы связь «цвет ↔ род» читалась без объяснений.
+    ///
+    /// Развёрнуто, а не через `map(AppColor.nounGender)`: ссылка на
+    /// MainActor-функцию в `Optional.map` теряет изоляцию, компилятор
+    /// подставляет тунк с проверкой актора в рантайме, и вызов не с главного
+    /// потока роняет процесс вместо ошибки компиляции.
+    var chipTint: Color? {
+        guard let gender = NounGender(grammarTag: self) else { return nil }
+        return AppColor.nounGender(gender)
     }
 }
 

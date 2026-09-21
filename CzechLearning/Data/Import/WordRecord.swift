@@ -48,6 +48,9 @@ nonisolated extension WordRecord {
         case unknownPartOfSpeech(String)
         case unknownLevel(String)
         case emptyRequiredField(String)
+        /// Мужской род без пометки одушевлённости (ТЗ 3.3): пропустить такую
+        /// строку честнее, чем потерять пометку и покрасить слово наугад.
+        case incompleteMasculine(String)
     }
 
     /// Разбор и валидация одной строки CSV.
@@ -64,6 +67,11 @@ nonisolated extension WordRecord {
               let level = CEFRLevel(rawValue: levelText)
         else {
             return .failure(.unknownLevel(row["level"]))
+        }
+
+        let genderAspect = row["gender_aspect"]
+        guard !GrammarTag.isIncompleteMasculine(csvValue: genderAspect) else {
+            return .failure(.incompleteMasculine(genderAspect))
         }
 
         // Непустые по ТЗ: слово, оба перевода, оба примера со своими переводами.

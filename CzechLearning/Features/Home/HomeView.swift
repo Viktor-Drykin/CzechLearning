@@ -158,8 +158,13 @@ struct HomeView: View {
             // их пять, и все должны быть видны сразу.
             LazyVGrid(
                 columns: [
-                    GridItem(.adaptive(minimum: Metrics.modeChipMinWidth), spacing: AppSpacing.tight)
+                    GridItem(
+                        .adaptive(minimum: Metrics.modeChipMinWidth),
+                        spacing: AppSpacing.tight,
+                        alignment: .leading
+                    )
                 ],
+                alignment: .leading,
                 spacing: AppSpacing.tight
             ) {
                 ForEach(availableModes, id: \.rawValue) { mode in

@@ -91,18 +91,21 @@ struct FlashcardView: View {
         .frame(maxWidth: .infinity)
     }
 
+    @ViewBuilder
     private var promptText: some View {
-        Group {
-            if isReverse {
-                Text(verbatim: word.translation(for: language))
-                    .appFont(AppFont.answerDisplay)
-            } else {
-                Text.czech(word.czech)
-                    .appFont(AppFont.wordDisplay)
-            }
+        if isReverse {
+            // В обратном направлении на лице стоит перевод: род подсказывать
+            // нечему, слово пользователь ещё не вспомнил.
+            Text(verbatim: word.translation(for: language))
+                .appFont(AppFont.answerDisplay)
+                .foregroundStyle(AppColor.label)
+                .multilineTextAlignment(.center)
+        } else {
+            Text.czech(word.czech)
+                .appFont(AppFont.wordDisplay)
+                .czechHeadword(word.nounGender)
+                .multilineTextAlignment(.center)
         }
-        .foregroundStyle(AppColor.label)
-        .multilineTextAlignment(.center)
     }
 
     /// Cloze-формат: пример с пропуском вместо самого слова (ТЗ 7.6).
@@ -126,7 +129,7 @@ struct FlashcardView: View {
             HStack(alignment: .firstTextBaseline, spacing: AppSpacing.tight) {
                 Text.czech(word.czech)
                     .appFont(AppFont.title1)
-                    .foregroundStyle(AppColor.label)
+                    .czechHeadword(word.nounGender)
 
                 Spacer(minLength: 0)
 

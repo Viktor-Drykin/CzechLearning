@@ -24,6 +24,8 @@ nonisolated struct DistractorCandidate: Sendable, Equatable, Identifiable {
     let russianMeanings: [String]
     let ukrainianMeanings: [String]
     let note: String?
+    /// Род существительного — вариант ответа на чешском красится по нему.
+    let nounGender: NounGender?
 
     init(
         id: Int,
@@ -33,7 +35,8 @@ nonisolated struct DistractorCandidate: Sendable, Equatable, Identifiable {
         isPhrase: Bool,
         russianMeanings: [String],
         ukrainianMeanings: [String],
-        note: String? = nil
+        note: String? = nil,
+        nounGender: NounGender? = nil
     ) {
         self.id = id
         self.czech = czech
@@ -43,6 +46,7 @@ nonisolated struct DistractorCandidate: Sendable, Equatable, Identifiable {
         self.russianMeanings = russianMeanings
         self.ukrainianMeanings = ukrainianMeanings
         self.note = note
+        self.nounGender = nounGender
     }
 
     func meanings(for language: TranslationLanguage) -> [String] {
@@ -206,7 +210,8 @@ extension DistractorCandidate {
             isPhrase: word.isPhrase,
             russianMeanings: word.translationMeanings(for: .russian),
             ukrainianMeanings: word.translationMeanings(for: .ukrainian),
-            note: word.noteText
+            note: word.noteText,
+            nounGender: word.nounGender
         )
     }
 }

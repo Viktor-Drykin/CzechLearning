@@ -104,6 +104,13 @@ nonisolated extension Word {
         partOfSpeech == .phrase
     }
 
+    /// Род — только у существительных. У слов, размеченных «мн.ч.», рода
+    /// в данных нет, поэтому цветовой подсказки у них тоже нет.
+    var nounGender: NounGender? {
+        guard partOfSpeech == .noun else { return nil }
+        return NounGender(grammarTag: grammarTag)
+    }
+
     var imageURL: URL? {
         guard let imageURLString, !imageURLString.isEmpty else { return nil }
         return URL(string: imageURLString)

@@ -130,6 +130,34 @@ extension AppColor {
     }
 }
 
+// MARK: - Род существительного
+
+extension AppColor {
+
+    /// Цвет чешского существительного по роду.
+    ///
+    /// Исключение из правила «цвет не декоративен»: здесь он несёт смысл —
+    /// род в чешском задаёт склонение, и привязать его к слову цветом полезнее,
+    /// чем читать пометку каждый раз. Значения подобраны так, чтобы давать
+    /// на `surface` не меньше 4,5:1 в обеих темах.
+    ///
+    /// Цвет — не единственный носитель: рядом всегда стоит чип с пометкой
+    /// («ж. р.», «м. р. одуш.»), потому что красный и зелёный неразличимы
+    /// при дальтонизме.
+    ///
+    /// `nil` — не существительное либо слово только во множественном числе:
+    /// рода у него в данных нет, красим обычным `label`.
+    static func nounGender(_ gender: NounGender?) -> Color {
+        switch gender {
+        case .feminine: dynamic(light: 0xD8372B, dark: 0xFF6961)
+        case .neuter: dynamic(light: 0x1D8139, dark: 0x4CD964)
+        case .masculineAnimate: dynamic(light: 0x0A7EA4, dark: 0x64D2FF)
+        case .masculineInanimate: dynamic(light: 0x0050B3, dark: 0x409CFF)
+        case .none: label
+        }
+    }
+}
+
 // MARK: - График активности
 
 extension AppColor {

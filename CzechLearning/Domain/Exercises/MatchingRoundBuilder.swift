@@ -25,6 +25,8 @@ nonisolated struct MatchingRoundBuilder {
         let wordID: Int
         let side: Side
         let text: String
+        /// Заполнен только у чешской стороны: перевод по роду не красим.
+        var nounGender: NounGender?
     }
 
     struct Round: Sendable, Equatable {
@@ -48,7 +50,13 @@ nonisolated struct MatchingRoundBuilder {
         }
 
         let czech = selected.map {
-            Tile(id: "cz-\($0.id)", wordID: $0.id, side: .czech, text: $0.czech)
+            Tile(
+                id: "cz-\($0.id)",
+                wordID: $0.id,
+                side: .czech,
+                text: $0.czech,
+                nounGender: $0.nounGender
+            )
         }
         let translations = selected.map {
             Tile(
@@ -81,6 +89,8 @@ nonisolated struct MatchingWord: Sendable, Equatable, Identifiable {
     let czech: String
     let russian: String
     let ukrainian: String
+    /// Род существительного — чешская плитка красится по нему.
+    var nounGender: NounGender?
 
     func primaryTranslation(for language: TranslationLanguage) -> String {
         switch language {
@@ -97,7 +107,8 @@ extension MatchingWord {
             id: word.id,
             czech: word.czech,
             russian: word.primaryTranslation(for: .russian),
-            ukrainian: word.primaryTranslation(for: .ukrainian)
+            ukrainian: word.primaryTranslation(for: .ukrainian),
+            nounGender: word.nounGender
         )
     }
 }

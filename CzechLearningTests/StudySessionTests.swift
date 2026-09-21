@@ -30,7 +30,7 @@ struct StudySessionTests {
                     id: id,
                     czech: "slovo\(id)",
                     partOfSpeechRaw: PartOfSpeech.noun.rawValue,
-                    grammarTagRaw: GrammarTag.masculine.rawValue,
+                    grammarTagRaw: GrammarTag.masculineInanimate.rawValue,
                     genitive: "slova\(id)",
                     levelRaw: CEFRLevel.a1.rawValue,
                     category: "Еда",

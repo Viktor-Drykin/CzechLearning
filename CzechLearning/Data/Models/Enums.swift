@@ -55,8 +55,14 @@ nonisolated enum PartOfSpeech: String, Codable, CaseIterable, Sendable {
 
 /// Род существительного или вид глагола — колонка `gender_aspect`.
 /// Пустая строка в CSV означает отсутствие пометки, а не ошибку.
+///
+/// Мужской род всегда размечен одушевлённостью: в чешском она меняет склонение
+/// (винительный одушевлённых совпадает с родительным — *vidím psa*,
+/// у неодушевлённых с именительным — *vidím hrad*). Значение `м.р.` без
+/// уточнения — ошибка данных, см. `GrammarTag.isIncompleteMasculine`.
 nonisolated enum GrammarTag: String, Codable, CaseIterable, Sendable {
-    case masculine
+    case masculineAnimate
+    case masculineInanimate
     case feminine
     case neuter
     case plural
@@ -65,7 +71,8 @@ nonisolated enum GrammarTag: String, Codable, CaseIterable, Sendable {
 
     var csvValue: String {
         switch self {
-        case .masculine: "м.р."
+        case .masculineAnimate: "м.р. одуш."
+        case .masculineInanimate: "м.р. неодуш."
         case .feminine: "ж.р."
         case .neuter: "ср.р."
         case .plural: "мн.ч."
@@ -81,6 +88,50 @@ nonisolated enum GrammarTag: String, Codable, CaseIterable, Sendable {
             return nil
         }
         self = match
+    }
+
+    /// Мужской род без пометки одушевлённости. По ТЗ 3.3 в данных такого нет,
+    /// и импорт считает это ошибкой валидации, а не молча теряет пометку.
+    static func isIncompleteMasculine(csvValue: String) -> Bool {
+        csvValue.trimmingCharacters(in: .whitespaces) == "м.р."
+    }
+}
+
+// MARK: - Род существительного
+
+/// Род для цветовой подсказки на карточке. Отдельно от `GrammarTag`, потому что
+/// тот описывает ещё и вид глагола, а красим только существительные.
+nonisolated enum NounGender: String, Codable, CaseIterable, Sendable {
+    case feminine
+    case neuter
+    case masculineAnimate
+    case masculineInanimate
+
+    /// Род из грамматической пометки. `nil` для всего, у чего рода нет:
+    /// вида глагола, слов только во множественном числе, пустой пометки.
+    init?(grammarTag: GrammarTag?) {
+        switch grammarTag {
+        case .feminine: self = .feminine
+        case .neuter: self = .neuter
+        case .masculineAnimate: self = .masculineAnimate
+        case .masculineInanimate: self = .masculineInanimate
+        case .plural, .imperfective, .perfective, .none: return nil
+        }
+    }
+
+    /// Разбор прямо из значения CSV. `м.р.` без уточнения одушевлённости
+    /// показываем как неодушевлённый — правило «не знаешь, одушевлённый или
+    /// нет, значит синий».
+    init?(csvValue: String) {
+        let trimmed = csvValue.trimmingCharacters(in: .whitespaces)
+        if GrammarTag.isIncompleteMasculine(csvValue: trimmed) {
+            self = .masculineInanimate
+            return
+        }
+        guard let tag = GrammarTag(csvValue: trimmed),
+              let gender = NounGender(grammarTag: tag)
+        else { return nil }
+        self = gender
     }
 }
 

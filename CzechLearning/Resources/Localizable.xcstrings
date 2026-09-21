@@ -1,1805 +1,1867 @@
 {
-  "sourceLanguage": "ru",
-  "strings": {
-    "%1$@%2$@": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$@%2$@"
+  "sourceLanguage" : "ru",
+  "strings" : {
+    "%@ г" : {
+      "comment" : "Интервал в годах с долей",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ р"
           }
         }
       }
     },
-    "%1$lld %2$@": {
-      "comment": "Число и подпись: «10 новых»",
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$lld %2$@"
+    "%@%@" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@%2$@"
           }
         }
       }
     },
-    "%1$lld / %2$lld": {
-      "comment": "Счётчик «N из M»",
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$lld / %2$lld"
+    "%1$@%2$@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@%2$@"
           }
         }
       }
     },
-    "%1$lld из %2$lld": {
-      "comment": "Выучено N из M слов",
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$lld з %2$lld"
+    "%1$lld / %2$lld" : {
+      "comment" : "Счётчик «N из M»",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld / %2$lld"
           }
         }
       }
     },
-    "%1$lld ч %2$lld мин": {
-      "comment": "Длительность сессии с часами",
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$lld год %2$lld хв"
+    "%1$lld %2$@" : {
+      "comment" : "Число и подпись: «10 новых»",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld %2$@"
           }
         }
       }
     },
-    "%@ г": {
-      "comment": "Интервал в годах с долей",
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ р"
+    "%1$lld из %2$lld" : {
+      "comment" : "Выучено N из M слов",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld з %2$lld"
           }
         }
       }
     },
-    "%lld": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld"
+    "%1$lld ч %2$lld мин" : {
+      "comment" : "Длительность сессии с часами",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld год %2$lld хв"
           }
         }
       }
     },
-    "%lld г": {
-      "comment": "Интервал в годах",
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld р"
+    "%lld" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
           }
         }
       }
     },
-    "%lld д": {
-      "comment": "Интервал в днях",
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld д"
+    "%lld г" : {
+      "comment" : "Интервал в годах",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld р"
           }
         }
       }
     },
-    "%lld мес": {
-      "comment": "Интервал в месяцах",
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld міс"
+    "%lld д" : {
+      "comment" : "Интервал в днях",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld д"
           }
         }
       }
     },
-    "%lld мин": {
-      "comment": "Длительность сессии\nИнтервал в минутах",
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld хв"
+    "%lld мес" : {
+      "comment" : "Интервал в месяцах",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld міс"
           }
         }
       }
     },
-    "%lld ч": {
-      "comment": "Интервал в часах",
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld год"
+    "%lld мин" : {
+      "comment" : "Длительность сессии\nИнтервал в минутах",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld хв"
           }
         }
       }
     },
-    "<1 мин": {
-      "comment": "Интервал меньше минуты",
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "<1 хв"
+    "%lld ч" : {
+      "comment" : "Интервал в часах",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld год"
           }
         }
       }
     },
-    "CZ → перевод": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CZ → переклад"
+    "<1 мин" : {
+      "comment" : "Интервал меньше минуты",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "<1 хв"
           }
         }
       }
     },
-    "CzechLearning": {
-      "extractionState": "manual",
-      "localizations": {
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CzechVocab"
+    "CZ → перевод" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CZ → переклад"
+          }
+        }
+      }
+    },
+    "CzechLearning" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CzechVocab"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CzechVocab"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CzechVocab"
           }
         }
       }
     },
-    "CzechVocab": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CzechVocab"
+    "CzechVocab" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CzechVocab"
           }
         }
       }
     },
-    "English": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "English"
+    "English" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "English"
           }
         }
       }
     },
-    "Автоозвучка карточки": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Автоозвучення картки"
+    "Автоозвучка карточки" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Автоозвучення картки"
           }
         }
       }
     },
-    "Активность за 30 дней": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Активність за 30 днів"
+    "Активность за 30 дней" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Активність за 30 днів"
           }
         }
       }
     },
-    "Аудирование": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Аудіювання"
+    "Аудирование" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аудіювання"
           }
         }
       }
     },
-    "Без лимита": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Без ліміту"
+    "Без лимита" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Без ліміту"
           }
         }
       }
     },
-    "Быстро": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Швидко"
+    "Быстро" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Швидко"
           }
         }
       }
     },
-    "В аудировании вводить ответ": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "В аудіюванні вводити відповідь"
+    "В аудировании вводить ответ" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "В аудіюванні вводити відповідь"
           }
         }
       }
     },
-    "В изучении": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "У вивченні"
+    "в изучении" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "у вивченні"
           }
         }
       }
     },
-    "В этой колоде не осталось карточек к повторению": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "У цій колоді не лишилося карток для повторення"
+    "В изучении" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У вивченні"
           }
         }
       }
     },
-    "Верно": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Правильно"
+    "В этой колоде не осталось карточек к повторению" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У цій колоді не лишилося карток для повторення"
           }
         }
       }
     },
-    "Верно, но без диакритики": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Правильно, але без діакритики"
+    "Верно" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Правильно"
           }
         }
       }
     },
-    "Вернуть в изучение": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Повернути у вивчення"
+    "Верно, но без диакритики" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Правильно, але без діакритики"
           }
         }
       }
     },
-    "Все": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Усі"
+    "Вернуть в изучение" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Повернути у вивчення"
           }
         }
       }
     },
-    "Выбор варианта": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вибір варіанта"
+    "верных" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "правильних"
           }
         }
       }
     },
-    "Выученные слова снова станут новыми.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вивчені слова знову стануть новими."
+    "верных ответов" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "правильних відповідей"
           }
         }
       }
     },
-    "Выучено": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вивчено"
+    "времени" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "часу"
           }
         }
       }
     },
-    "Выучено %1$lld из %2$lld": {
-      "comment": "VoiceOver: прогресс колоды",
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вивчено %1$lld з %2$lld"
+    "Все" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Усі"
           }
         }
       }
     },
-    "Готовим словарь": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Готуємо словник"
+    "Выбор варианта" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибір варіанта"
           }
         }
       }
     },
-    "Готово": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Готово"
+    "Выученные слова снова станут новыми." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вивчені слова знову стануть новими."
           }
         }
       }
     },
-    "Дальше": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Далі"
+    "выучено" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "вивчено"
           }
         }
       }
     },
-    "Действие необратимо.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Дію не можна скасувати."
+    "Выучено" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вивчено"
           }
         }
       }
     },
-    "День": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "День"
+    "Выучено %1$lld из %2$lld" : {
+      "comment" : "VoiceOver: прогресс колоды",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вивчено %1$lld з %2$lld"
           }
         }
       }
     },
-    "Ещё раз": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ще раз"
+    "глаг." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "дієсл."
           }
         }
       }
     },
-    "Закончить": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Закінчити"
+    "глагол" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "дієслово"
           }
         }
       }
     },
-    "Закончить сессию?": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Закінчити сесію?"
+    "Готовим словарь" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Готуємо словник"
           }
         }
       }
     },
-    "Закрыть сессию": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Закрити сесію"
+    "Готово" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Готово"
           }
         }
       }
     },
-    "Изучение": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вивчення"
+    "Дальше" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Далі"
           }
         }
       }
     },
-    "Исключено из ротации": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вилучено з ротації"
+    "Действие необратимо." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дію не можна скасувати."
           }
         }
       }
     },
-    "Исключить из ротации": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вилучити з ротації"
+    "День" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "День"
           }
         }
       }
     },
-    "Картинки загружаются один раз и дальше берутся с диска. Без сети показывается заглушка.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Зображення завантажуються один раз і далі беруться з диска. Без мережі показується заглушка."
+    "Ещё раз" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ще раз"
           }
         }
       }
     },
-    "Карточки": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Картки"
+    "ж. р." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ж. р."
           }
         }
       }
     },
-    "Колода %@": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Колода %@"
+    "женский род" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "жіночий рід"
           }
         }
       }
     },
-    "Колоды": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Колоди"
+    "Закончить" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закінчити"
           }
         }
       }
     },
-    "Легко": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Легко"
+    "Закончить сессию?" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закінчити сесію?"
           }
         }
       }
     },
-    "Ложные друзья": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Фальшиві друзі"
+    "Закрыть сессию" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закрити сесію"
           }
         }
       }
     },
-    "Максимум повторений": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Максимум повторень"
+    "Изучение" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вивчення"
           }
         }
       }
     },
-    "Медленно": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Повільно"
+    "Исключено из ротации" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вилучено з ротації"
           }
         }
       }
     },
-    "На сегодня всё": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "На сьогодні все"
+    "Исключить из ротации" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вилучити з ротації"
           }
         }
       }
     },
-    "Нагрузка": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Навантаження"
+    "к повторению" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "до повторення"
           }
         }
       }
     },
-    "Направление карточек": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Напрямок карток"
+    "картинка слова" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "зображення слова"
           }
         }
       }
     },
-    "Настройки": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Налаштування"
+    "Картинки загружаются один раз и дальше берутся с диска. Без сети показывается заглушка." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зображення завантажуються один раз і далі беруться з диска. Без мережі показується заглушка."
           }
         }
       }
     },
-    "Начать": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Почати"
+    "карточек" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "карток"
           }
         }
       }
     },
-    "Не знаю": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Не знаю"
+    "Карточки" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картки"
           }
         }
       }
     },
-    "Не начато": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Не розпочато"
+    "Колода %@" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Колода %@"
           }
         }
       }
     },
-    "Не связан с языком интерфейса: можно держать интерфейс на украинском, а переводы смотреть на русском.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Не пов'язана з мовою інтерфейсу: можна тримати інтерфейс українською, а переклади дивитися російською."
+    "Колоды" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Колоди"
           }
         }
       }
     },
-    "Не удалось загрузить словарь": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Не вдалося завантажити словник"
+    "Легко" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Легко"
           }
         }
       }
     },
-    "Неверно": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Неправильно"
+    "Ложные друзья" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фальшиві друзі"
           }
         }
       }
     },
-    "Ничего не найдено": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Нічого не знайдено"
+    "м. р. неодуш." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ч. р. неістот."
           }
         }
       }
     },
-    "Новых слов в день": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Нових слів на день"
+    "м. р. одуш." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ч. р. істот."
           }
         }
       }
     },
-    "Обычно": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Звичайно"
+    "Максимум повторений" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Максимум повторень"
           }
         }
       }
     },
-    "Озвучка": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Озвучення"
+    "Медленно" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Повільно"
           }
         }
       }
     },
-    "Осталось карточек: %lld": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Лишилося карток: %lld"
+    "межд." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "виг."
           }
         }
       }
     },
-    "Ответ по-чешски": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Відповідь чеською"
+    "междометие" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "вигук"
           }
         }
       }
     },
-    "Ответов": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Відповідей"
+    "мест." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "займ."
           }
         }
       }
     },
-    "Ответов пока нет — график появится после первой сессии": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Відповідей поки немає — графік з'явиться після першої сесії"
+    "местоимение" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "займенник"
           }
         }
       }
     },
-    "Отмена": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Скасувати"
+    "мн. ч." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "мн."
           }
         }
       }
     },
-    "Оформление": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Оформлення"
+    "мужской неодушевлённый род" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "чоловічий рід, неістота"
           }
         }
       }
     },
-    "Пары": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Пари"
+    "мужской одушевлённый род" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "чоловічий рід, істота"
           }
         }
       }
     },
-    "Перевод": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Переклад"
+    "На сегодня всё" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "На сьогодні все"
           }
         }
       }
     },
-    "Перевод → CZ": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Переклад → CZ"
+    "Нагрузка" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Навантаження"
           }
         }
       }
     },
-    "Переводы": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Переклади"
+    "Направление карточек" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Напрямок карток"
           }
         }
       }
     },
-    "Письменный ввод": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Письмове введення"
+    "нареч." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "присл."
           }
         }
       }
     },
-    "По темам": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "За темами"
+    "наречие" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "прислівник"
           }
         }
       }
     },
-    "По уровням": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "За рівнями"
+    "Настройки" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Налаштування"
           }
         }
       }
     },
-    "Повторений на сегодня нет. Можно взять новые слова вперёд.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Повторень на сьогодні немає. Можна взяти нові слова наперед."
+    "Начать" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Почати"
           }
         }
       }
     },
-    "Повторить": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Повторити"
+    "Не знаю" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не знаю"
           }
         }
       }
     },
-    "Показать ответ": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Показати відповідь"
+    "Не начато" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не розпочато"
           }
         }
       }
     },
-    "Показывать картинки": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Показувати зображення"
+    "Не связан с языком интерфейса: можно держать интерфейс на украинском, а переводы смотреть на русском." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не пов'язана з мовою інтерфейсу: можна тримати інтерфейс українською, а переклади дивитися російською."
           }
         }
       }
     },
-    "Помедленнее": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Повільніше"
+    "Не удалось загрузить словарь" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося завантажити словник"
           }
         }
       }
     },
-    "Понятно": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Зрозуміло"
+    "Неверно" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неправильно"
           }
         }
       }
     },
-    "Попробуйте другое слово — искать можно по-чешски, по-русски и по-украински": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Спробуйте інше слово — шукати можна чеською, російською та українською"
+    "несов. вид" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "недок. вид"
           }
         }
       }
     },
-    "Почти верно — одна опечатка": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Майже правильно — одна помилка"
+    "Ничего не найдено" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нічого не знайдено"
           }
         }
       }
     },
-    "Правильный ответ": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Правильна відповідь"
+    "новых" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "нових"
           }
         }
       }
     },
-    "Примеры": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Приклади"
+    "новых выучено" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "нових вивчено"
           }
         }
       }
     },
-    "Примечание": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Примітка"
+    "новых осталось" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "нових лишилося"
           }
         }
       }
     },
-    "Проверить": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Перевірити"
+    "Новых слов в день" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нових слів на день"
           }
         }
       }
     },
-    "Прогресс": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Прогрес"
+    "Обычно" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Звичайно"
           }
         }
       }
     },
-    "Прогресс не удалось восстановить": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Прогрес не вдалося відновити"
+    "Озвучка" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Озвучення"
           }
         }
       }
     },
-    "Прогресс сессии": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Прогрес сесії"
+    "Осталось карточек: %lld" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лишилося карток: %lld"
           }
         }
       }
     },
-    "Продолжить": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Продовжити"
+    "Ответ по-чешски" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відповідь чеською"
           }
         }
       }
     },
-    "Пройдено меньше половины карточек. Ответы уже сохранены.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Пройдено менше половини карток. Відповіді вже збережено."
+    "Ответов" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відповідей"
           }
         }
       }
     },
-    "Пропуск в предложении": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Пропуск у реченні"
+    "Ответов пока нет — график появится после первой сессии" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відповідей поки немає — графік з'явиться після першої сесії"
           }
         }
       }
     },
-    "Пропуск в предложении показывает пример с пробелом вместо слова. Доступен не для всех слов.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Пропуск у реченні показує приклад із прогалиною замість слова. Доступний не для всіх слів."
+    "Отмена" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скасувати"
           }
         }
       }
     },
-    "Прослушать": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Прослухати"
+    "Оформление" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оформлення"
           }
         }
       }
     },
-    "Прослушать ещё раз": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Прослухати ще раз"
+    "Пары" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пари"
           }
         }
       }
     },
-    "Режим «%@»": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Режим «%@»"
+    "Перевод" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Переклад"
           }
         }
       }
     },
-    "Режим по умолчанию": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Режим за замовчуванням"
+    "Перевод → CZ" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Переклад → CZ"
           }
         }
       }
     },
-    "Режимы": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Режими"
+    "Переводы" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Переклади"
           }
         }
       }
     },
-    "Русский": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Русский"
+    "Письменный ввод" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Письмове введення"
           }
         }
       }
     },
-    "Сбросить": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Скинути"
+    "По темам" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "За темами"
           }
         }
       }
     },
-    "Сбросить весь прогресс?": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Скинути весь прогрес?"
+    "По уровням" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "За рівнями"
           }
         }
       }
     },
-    "Сбросить прогресс": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Скинути прогрес"
+    "Повторений на сегодня нет. Можно взять новые слова вперёд." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Повторень на сьогодні немає. Можна взяти нові слова наперед."
           }
         }
       }
     },
-    "Сегодня": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сьогодні"
+    "повторить" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "повторити"
           }
         }
       }
     },
-    "Сессия": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сесія"
+    "Повторить" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Повторити"
           }
         }
       }
     },
-    "Сессия завершена": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сесію завершено"
+    "Показать ответ" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показати відповідь"
           }
         }
       }
     },
-    "Скорость озвучки": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Швидкість озвучення"
+    "Показывать картинки" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показувати зображення"
           }
         }
       }
     },
-    "Следующий показ": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Наступний показ"
+    "Помедленнее" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Повільніше"
           }
         }
       }
     },
-    "Следующий показ через %@": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Наступний показ через %@"
+    "Понятно" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зрозуміло"
           }
         }
       }
     },
-    "Словарь": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Словник"
+    "Попробуйте другое слово — искать можно по-чешски, по-русски и по-украински" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спробуйте інше слово — шукати можна чеською, російською та українською"
           }
         }
       }
     },
-    "Слово, перевод или фраза": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Слово, переклад або фраза"
+    "Почти верно — одна опечатка" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Майже правильно — одна помилка"
           }
         }
       }
     },
-    "Смешанное": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Змішаний"
+    "Правильный ответ" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Правильна відповідь"
           }
         }
       }
     },
-    "Снова": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Знову"
+    "предл." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "прийм."
           }
         }
       }
     },
-    "Соберите пары": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Зберіть пари"
+    "предлог" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "прийменник"
           }
         }
       }
     },
-    "Статус": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Статус"
+    "прил." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "прикм."
           }
         }
       }
     },
-    "Точно сбросить?": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Точно скинути?"
+    "прилагательное" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "прикметник"
           }
         }
       }
     },
-    "Трудно": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Важко"
+    "Примеры" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Приклади"
           }
         }
       }
     },
-    "Трудные слова": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Важкі слова"
+    "Примечание" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Примітка"
           }
         }
       }
     },
-    "Удаляет статус изучения всех слов, журнал ответов и статистику. Словарь останется на месте.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Видаляє статус вивчення всіх слів, журнал відповідей і статистику. Словник залишиться на місці."
+    "Проверить" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перевірити"
           }
         }
       }
     },
-    "Українська": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Українська"
+    "Прогресс" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прогрес"
           }
         }
       }
     },
-    "Уровень": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Рівень"
+    "Прогресс не удалось восстановить" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прогрес не вдалося відновити"
           }
         }
       }
     },
-    "Услышанное слово": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Почуте слово"
+    "Прогресс сессии" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прогрес сесії"
           }
         }
       }
     },
-    "Установите чешский голос: Настройки → Универсальный доступ → Устный контент → Голоса": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Встановіть чеський голос: Налаштування → Доступність → Усний контент → Голоси"
+    "Продолжить" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Продовжити"
           }
         }
       }
     },
-    "Учить": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вчити"
+    "Пройдено меньше половины карточек. Ответы уже сохранены." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пройдено менше половини карток. Відповіді вже збережено."
           }
         }
       }
     },
-    "Учить вперёд": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вчити наперед"
+    "Пропуск в предложении" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пропуск у реченні"
           }
         }
       }
     },
-    "Фильтр по уровню": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Фільтр за рівнем"
+    "Пропуск в предложении показывает пример с пробелом вместо слова. Доступен не для всех слов." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пропуск у реченні показує приклад із прогалиною замість слова. Доступний не для всіх слів."
           }
         }
       }
     },
-    "Фразы": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Фрази"
+    "Прослушать" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прослухати"
           }
         }
       }
     },
-    "Хорошо": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Добре"
+    "Прослушать ещё раз" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прослухати ще раз"
           }
         }
       }
     },
-    "Хранилище не открылось и было создано заново. Словарь на месте, но изученное придётся пройти снова.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сховище не відкрилося і було створене заново. Словник на місці, але вивчене доведеться пройти знову."
+    "р. п. " : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "р. в. "
           }
         }
       }
     },
-    "Хранилище недоступно. Приложение работает, но прогресс не сохранится до перезапуска.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сховище недоступне. Застосунок працює, але прогрес не збережеться до перезапуску."
+    "Режим «%@»" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Режим «%@»"
           }
         }
       }
     },
-    "Чешское слово": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Чеське слово"
+    "Режим по умолчанию" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Режим за замовчуванням"
           }
         }
       }
     },
-    "Что вы услышали?": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Що ви почули?"
+    "Режимы" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Режими"
           }
         }
       }
     },
-    "Это занимает пару секунд и происходит только один раз": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Це займає кілька секунд і відбувається лише раз"
+    "Русский" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Русский"
           }
         }
       }
     },
-    "Язык перевода": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Мова перекладу"
+    "Сбросить" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скинути"
           }
         }
       }
     },
-    "в изучении": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "у вивченні"
+    "Сбросить весь прогресс?" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скинути весь прогрес?"
           }
         }
       }
     },
-    "верных": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "правильних"
+    "Сбросить прогресс" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скинути прогрес"
           }
         }
       }
     },
-    "верных ответов": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "правильних відповідей"
+    "Сегодня" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сьогодні"
           }
         }
       }
     },
-    "времени": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "часу"
+    "Сессия" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сесія"
           }
         }
       }
     },
-    "выучено": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "вивчено"
+    "Сессия завершена" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сесію завершено"
           }
         }
       }
     },
-    "глаг.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "дієсл."
+    "Скорость озвучки" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Швидкість озвучення"
           }
         }
       }
     },
-    "глагол": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "дієслово"
+    "Следующий показ" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наступний показ"
           }
         }
       }
     },
-    "ж. р.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ж. р."
+    "Следующий показ через %@" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наступний показ через %@"
           }
         }
       }
     },
-    "к повторению": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "до повторення"
+    "Словарь" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Словник"
           }
         }
       }
     },
-    "картинка слова": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "зображення слова"
+    "Слово, перевод или фраза" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Слово, переклад або фраза"
           }
         }
       }
     },
-    "карточек": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "карток"
+    "Смешанное" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Змішаний"
           }
         }
       }
     },
-    "м. р.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ч. р."
+    "Снова" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Знову"
           }
         }
       }
     },
-    "межд.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "виг."
+    "Соберите пары" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зберіть пари"
           }
         }
       }
     },
-    "междометие": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "вигук"
+    "сов. вид" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "док. вид"
           }
         }
       }
     },
-    "мест.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "займ."
+    "союз" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "сполучник"
           }
         }
       }
     },
-    "местоимение": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "займенник"
+    "ср. р." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "с. р."
           }
         }
       }
     },
-    "мн. ч.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "мн."
+    "средний род" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "середній рід"
           }
         }
       }
     },
-    "нареч.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "присл."
+    "Статус" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Статус"
           }
         }
       }
     },
-    "наречие": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "прислівник"
+    "сущ." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ім."
           }
         }
       }
     },
-    "несов. вид": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "недок. вид"
+    "существительное" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "іменник"
           }
         }
       }
     },
-    "новых": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "нових"
+    "Точно сбросить?" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Точно скинути?"
           }
         }
       }
     },
-    "новых выучено": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "нових вивчено"
+    "Трудно" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Важко"
           }
         }
       }
     },
-    "новых осталось": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "нових лишилося"
+    "Трудные слова" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Важкі слова"
           }
         }
       }
     },
-    "повторить": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "повторити"
+    "Удаляет статус изучения всех слов, журнал ответов и статистику. Словарь останется на месте." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Видаляє статус вивчення всіх слів, журнал відповідей і статистику. Словник залишиться на місці."
           }
         }
       }
     },
-    "предл.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "прийм."
+    "Українська" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Українська"
           }
         }
       }
     },
-    "предлог": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "прийменник"
+    "Уровень" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рівень"
           }
         }
       }
     },
-    "прил.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "прикм."
+    "Услышанное слово" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Почуте слово"
           }
         }
       }
     },
-    "прилагательное": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "прикметник"
+    "Установите чешский голос: Настройки → Универсальный доступ → Устный контент → Голоса" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Встановіть чеський голос: Налаштування → Доступність → Усний контент → Голоси"
           }
         }
       }
     },
-    "р. п. ": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "р. в. "
+    "Учить" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вчити"
           }
         }
       }
     },
-    "сов. вид": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "док. вид"
+    "Учить вперёд" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вчити наперед"
           }
         }
       }
     },
-    "союз": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "сполучник"
+    "Фильтр по уровню" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фільтр за рівнем"
           }
         }
       }
     },
-    "ср. р.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "с. р."
+    "фраза" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "фраза"
           }
         }
       }
     },
-    "сущ.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ім."
+    "Фразы" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фрази"
           }
         }
       }
     },
-    "существительное": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "іменник"
+    "Хорошо" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добре"
           }
         }
       }
     },
-    "фраза": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "фраза"
+    "Хранилище не открылось и было создано заново. Словарь на месте, но изученное придётся пройти снова." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сховище не відкрилося і було створене заново. Словник на місці, але вивчене доведеться пройти знову."
           }
         }
       }
     },
-    "част.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "част."
+    "Хранилище недоступно. Приложение работает, но прогресс не сохранится до перезапуска." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сховище недоступне. Застосунок працює, але прогрес не збережеться до перезапуску."
           }
         }
       }
     },
-    "частица": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "частка"
+    "част." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "част."
           }
         }
       }
     },
-    "числ.": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "числ."
+    "частица" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "частка"
           }
         }
       }
     },
-    "числительное": {
-      "localizations": {
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "числівник"
+    "Чешское слово" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чеське слово"
+          }
+        }
+      }
+    },
+    "числ." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "числ."
+          }
+        }
+      }
+    },
+    "числительное" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "числівник"
+          }
+        }
+      }
+    },
+    "Что вы услышали?" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Що ви почули?"
+          }
+        }
+      }
+    },
+    "Это занимает пару секунд и происходит только один раз" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Це займає кілька секунд і відбувається лише раз"
+          }
+        }
+      }
+    },
+    "Язык перевода" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мова перекладу"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }

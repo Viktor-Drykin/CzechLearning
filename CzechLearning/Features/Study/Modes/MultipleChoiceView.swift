@@ -29,6 +29,7 @@ struct MultipleChoiceView: View {
                     OptionRow(
                         text: optionText(for: option),
                         isCzech: isReverse,
+                        nounGender: isReverse ? option.nounGender : nil,
                         state: state(for: option),
                         action: { select(option) }
                     )
@@ -51,9 +52,11 @@ struct MultipleChoiceView: View {
             if isReverse {
                 Text(verbatim: word.primaryTranslation(for: language))
                     .appFont(AppFont.wordDisplayCompact)
+                    .foregroundStyle(AppColor.label)
             } else {
                 Text.czech(word.czech)
                     .appFont(AppFont.wordDisplayCompact)
+                    .czechHeadword(word.nounGender)
             }
 
             if !isReverse {
@@ -62,7 +65,6 @@ struct MultipleChoiceView: View {
 
             Spacer(minLength: 0)
         }
-        .foregroundStyle(AppColor.label)
         .multilineTextAlignment(.center)
         .frame(maxWidth: .infinity)
         .padding(AppSpacing.cardPadding)
@@ -126,6 +128,9 @@ struct OptionRow: View {
 
     let text: String
     var isCzech = false
+    /// Род — только для чешского варианта и только пока ответ не дан:
+    /// после ответа цвет занят разметкой «верно / неверно».
+    var nounGender: NounGender?
     let state: State
     let action: () -> Void
 
@@ -160,7 +165,7 @@ struct OptionRow: View {
 
     private var foreground: Color {
         switch state {
-        case .idle: AppColor.label
+        case .idle: AppColor.nounGender(nounGender)
         case .correct: AppColor.grade(.good).label
         case .wrong: AppColor.grade(.again).label
         case .dimmed: AppColor.labelTertiary

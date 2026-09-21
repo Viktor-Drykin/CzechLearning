@@ -80,6 +80,7 @@ struct MatchingView: View {
                     MatchTile(
                         text: tile.text,
                         isCzech: isCzech,
+                        nounGender: tile.nounGender,
                         isSelected: selected?.id == tile.id,
                         isWrong: wrongPair.contains(tile.id),
                         action: { tap(tile) }
@@ -155,6 +156,7 @@ struct MatchTile: View {
 
     let text: String
     let isCzech: Bool
+    var nounGender: NounGender?
     let isSelected: Bool
     let isWrong: Bool
     let action: () -> Void
@@ -187,8 +189,11 @@ struct MatchTile: View {
     }
 
     private var foreground: Color {
+        // Выбранная плитка лежит на фиолетовой заливке, ошибочная — на красной:
+        // род там не прочитать, цвет занят состоянием.
         if isWrong { return AppColor.grade(.again).label }
-        return isSelected ? AppColor.onAccent : AppColor.label
+        if isSelected { return AppColor.onAccent }
+        return AppColor.nounGender(nounGender)
     }
 
     private var background: Color {

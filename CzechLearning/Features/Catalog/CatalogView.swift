@@ -203,7 +203,7 @@ struct WordRow: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text.czech(word.czech)
                     .appFont(AppFont.callout)
-                    .foregroundStyle(AppColor.label)
+                    .czechHeadword(word.nounGender)
 
                 Text(verbatim: word.translation(for: language))
                     .appFont(AppFont.footnote)

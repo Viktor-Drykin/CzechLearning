@@ -142,3 +142,33 @@ extension Text {
         Text(AppText.czech(string))
     }
 }
+
+// MARK: - Заголовочное слово
+
+extension View {
+
+    /// Чешское слово как заголовок: цвет по роду существительного и род,
+    /// проговариваемый VoiceOver отдельным значением.
+    ///
+    /// Значение, а не часть метки: метка остаётся чешской строкой с `cs-CZ`,
+    /// поэтому VoiceOver читает слово чешским голосом, а род — языком
+    /// интерфейса. Склеить их в одну строку значило бы потерять это.
+    func czechHeadword(_ gender: NounGender?) -> some View {
+        foregroundStyle(AppColor.nounGender(gender))
+            .accessibilityValue(Text(verbatim: gender?.displayName ?? ""))
+    }
+}
+
+extension NounGender {
+
+    /// Подпись рода: она же стоит в чипе рядом со словом, потому что
+    /// цвет не должен быть единственным носителем смысла.
+    var displayName: String {
+        switch self {
+        case .feminine: String(localized: "женский род")
+        case .neuter: String(localized: "средний род")
+        case .masculineAnimate: String(localized: "мужской одушевлённый род")
+        case .masculineInanimate: String(localized: "мужской неодушевлённый род")
+        }
+    }
+}

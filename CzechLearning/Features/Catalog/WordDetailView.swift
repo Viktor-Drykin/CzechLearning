@@ -48,7 +48,7 @@ struct WordDetailView: View {
             HStack(alignment: .firstTextBaseline, spacing: AppSpacing.stack) {
                 Text.czech(word.czech)
                     .appFont(AppFont.wordDisplayCompact)
-                    .foregroundStyle(AppColor.label)
+                    .czechHeadword(word.nounGender)
 
                 Spacer(minLength: 0)
 

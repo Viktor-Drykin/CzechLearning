@@ -27,6 +27,12 @@ struct DataImporterTests {
         static let withImageURL = 1005
         static let withNote = 38
         static let examples = 3488
+        // Разбивка существительных по роду (ТЗ 3.4).
+        static let masculineAnimate = 78
+        static let masculineInanimate = 268
+        static let feminine = 343
+        static let neuter = 132
+        static let pluralOnly = 35
     }
 
     // MARK: - Инструменты
@@ -72,6 +78,13 @@ struct DataImporterTests {
         #expect(words.filter { $0.genitiveForm != nil }.count == Expected.withGenitive)
         #expect(words.filter { $0.imageURL != nil }.count == Expected.withImageURL)
         #expect(words.filter { $0.noteText != nil }.count == Expected.withNote)
+
+        let byTag = { (tag: GrammarTag) in words.filter { $0.grammarTag == tag }.count }
+        #expect(byTag(.masculineAnimate) == Expected.masculineAnimate)
+        #expect(byTag(.masculineInanimate) == Expected.masculineInanimate)
+        #expect(byTag(.feminine) == Expected.feminine)
+        #expect(byTag(.neuter) == Expected.neuter)
+        #expect(byTag(.plural) == Expected.pluralOnly)
 
         let exampleCount = words.reduce(into: 0) { total, word in
             total += word.examples(for: .russian).filter { !$0.czech.isEmpty }.count
@@ -210,8 +223,12 @@ struct DataImporterTests {
         #expect(PartOfSpeech(csvValue: "межд.") == .interjection)
         #expect(PartOfSpeech(csvValue: "") == nil)
 
-        #expect(GrammarTag(csvValue: "м.р.") == .masculine)
+        #expect(GrammarTag(csvValue: "м.р. одуш.") == .masculineAnimate)
+        #expect(GrammarTag(csvValue: "м.р. неодуш.") == .masculineInanimate)
         #expect(GrammarTag(csvValue: "мн.ч.") == .plural)
+        // Мужской род без одушевлённости — ошибка данных, а не пометка.
+        #expect(GrammarTag(csvValue: "м.р.") == nil)
+        #expect(GrammarTag.isIncompleteMasculine(csvValue: "м.р."))
         #expect(GrammarTag(csvValue: "несов.") == .imperfective)
         #expect(GrammarTag(csvValue: "") == nil)
     }
